@@ -1,0 +1,37 @@
+﻿@model IEnumerable<RinconGuatemaltecoApp.Models.Usuario>
+
+<h1>Lista de Usuarios</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Success"]
+    </div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre de Usuario</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td>@usuario.UsuarioID</td>
+                <td>@usuario.NombreUsuario</td>
+                <td>@usuario.Rol</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@usuario.UsuarioID" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@usuario.UsuarioID" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Crear Nuevo Usuario</a>

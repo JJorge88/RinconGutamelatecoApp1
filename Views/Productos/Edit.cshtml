@@ -1,0 +1,24 @@
+﻿@model RinconGuatemaltecoApp.Models.Producto
+
+<h1>Editar Producto</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="ProductoID" />
+    <div>
+        <label for="Nombre">Nombre:</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+    <div>
+        <label for="Categoria">Categoría:</label>
+        <input asp-for="Categoria" class="form-control" />
+    </div>
+    <div>
+        <label for="Precio">Precio:</label>
+        <input asp-for="Precio" class="form-control" type="number" step="0.01" />
+    </div>
+    <div>
+        <label for="Stock">Stock:</label>
+        <input asp-for="Stock" class="form-control" type="number" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>

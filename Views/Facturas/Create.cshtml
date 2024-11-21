@@ -1,0 +1,23 @@
+﻿@model RinconGuatemaltecoApp.Models.Factura
+
+<h1>Crear Factura</h1>
+
+<form asp-action="Create">
+    <div>
+        <label>Cliente</label>
+        <select asp-for="ClienteID" asp-items="@(new SelectList(ViewBag.Clientes, "ClienteID", "Nombre"))"></select>
+    </div>
+    <div>
+        <label>Venta</label>
+        <select asp-for="VentaID" asp-items="@(new SelectList(ViewBag.Ventas, "VentaID", "VentaID"))"></select>
+    </div>
+    <div>
+        <label>Fecha</label>
+        <input asp-for="Fecha" type="date" />
+    </div>
+    <div>
+        <label>Total</label>
+        <input asp-for="Total" type="number" step="0.01" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>

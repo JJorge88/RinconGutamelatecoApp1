@@ -1,0 +1,25 @@
+﻿@model IEnumerable<RinconGuatemaltecoApp.Models.Producto>
+
+<h1>Productos</h1>
+
+<a href="/Productos/Create">Crear Nuevo Producto</a>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Categoría</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Acciones</th>
+    </tr>
+    @foreach (var producto in Model)
+    {
+        <tr>
+            <td>@producto.ProductoID</td>
+            <td>@producto.Nombre</td>
+            <td>@producto.Precio.ToString("C")</td>
+            <td>@producto.Stock</td>
+        </tr>
+    }
+
+</table>

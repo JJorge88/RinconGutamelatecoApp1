@@ -1,0 +1,16 @@
+﻿@model  RinconGuatemaltecoApp.Models.Usuario
+
+<h1>Eliminar Usuario</h1>
+
+<p>¿Está seguro que desea eliminar este usuario?</p>
+
+<div>
+    <h4>@Model.NombreUsuario</h4>
+    <p>Rol: @Model.Rol</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="UsuarioID" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

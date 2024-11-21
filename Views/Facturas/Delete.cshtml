@@ -1,0 +1,17 @@
+﻿@model RinconGuatemaltecoApp.Models.Factura
+
+<h1>Eliminar Factura</h1>
+<p>¿Está seguro de que desea eliminar esta factura?</p>
+
+<p><strong>Factura ID:</strong> @Model.FacturaID</p>
+<p><strong>Cliente:</strong> @Model.Cliente.Nombre</p>
+<p><strong>Venta:</strong> @Model.VentaID</p>
+<p><strong>Fecha:</strong> @Model.Fecha.ToShortDateString()</p>
+<p><strong>Total:</strong> Q@Model.Total.ToString("N2")</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="FacturaID" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Cancelar</a>

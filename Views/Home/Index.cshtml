@@ -1,0 +1,53 @@
+﻿@model IEnumerable<RinconGuatemaltecoApp.Models.Venta>
+@{
+    ViewData["Title"] = "Menú Principal - Tienda";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="mb-4">Menú Principal</h1>
+        <p class="lead">Bienvenido al sistema de gestión de la tienda. Seleccione una de las opciones para continuar.</p>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-lg border-0 h-100">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Nueva Venta</h5>
+                    <p class="card-text">Registre una nueva venta seleccionando productos y clientes.</p>
+                    <a href="@Url.Action("Create", "Ventas")" class="btn btn-primary mt-auto">Registrar Venta</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-lg border-0 h-100">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Agregar Cliente</h5>
+                    <p class="card-text">Añada un nuevo cliente al sistema para futuras ventas.</p>
+                    <a href="@Url.Action("Create", "Clientes")" class="btn btn-primary mt-auto">Agregar Cliente</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-lg border-0 h-100">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Inventario de Productos</h5>
+                    <p class="card-text">Ver o actualizar la lista de productos en la tienda.</p>
+                    <a href="@Url.Action("Index", "Productos")" class="btn btn-primary mt-auto">Ver Inventario</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-lg border-0 h-100">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">Historial de Ventas</h5>
+                    <p class="card-text">Consulte el historial de ventas realizadas en la tienda.</p>
+                    <a href="@Url.Action("Index", "Ventas")" class="btn btn-primary mt-auto">Ver Ventas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

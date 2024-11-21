@@ -1,0 +1,19 @@
+﻿@model RinconGuatemaltecoApp.Models.Cliente
+
+<h1>Crear Cliente</h1>
+
+<form asp-action="Create">
+    <div>
+        <label for="Nombre">Nombre:</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+    <div>
+        <label for="Direccion">Dirección:</label>
+        <input asp-for="Direccion" class="form-control" />
+    </div>
+    <div>
+        <label for="Telefono">Teléfono:</label>
+        <input asp-for="Telefono" class="form-control" />
+    </div>
+    <button type="submit">Guardar</button>
+</form>

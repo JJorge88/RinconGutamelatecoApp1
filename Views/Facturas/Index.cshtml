@@ -1,0 +1,29 @@
+﻿@model IEnumerable<RinconGuatemaltecoApp.Models.Factura>
+
+<h2>Listado de Facturas</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var factura in Model)
+        {
+            <tr>
+                <td>@factura.FacturaID</td>
+                <td>@factura.Cliente?.Nombre ?? "Sin cliente"</td>
+                <td>@factura.Fecha.ToShortDateString()</td>
+                <td>@factura.Total.ToString("C")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@factura.FacturaID" class="btn btn-info">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@factura.FacturaID" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

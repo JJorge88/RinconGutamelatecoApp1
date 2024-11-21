@@ -1,0 +1,36 @@
+﻿@model RinconGuatemaltecoApp.Models.Producto
+
+@{
+    ViewData["Title"] = "Editar Producto";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Editar Producto</h1>
+
+    <form asp-action="Edit" method="post">
+        <div class="form-group">
+            <label for="Nombre">Nombre</label>
+            <input type="text" class="form-control" id="Nombre" value="@Model.Nombre" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="Categoria">Categoría</label>
+            <input type="text" class="form-control" id="Categoria" value="@Model.Categoria" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="Precio">Precio</label>
+            <input type="text" class="form-control" id="Precio" value="Q@Model.Precio.ToString(" N2")" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="Stock">Stock</label>
+            <input type="number" class="form-control" id="Stock" name="Stock" value="@Model.Stock" />
+        </div>
+
+        <input type="hidden" name="ProductoID" value="@Model.ProductoID" />
+
+        <button type="submit" class="btn btn-success">Guardar Cambios</button>
+        <a href="/Inventarios/Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

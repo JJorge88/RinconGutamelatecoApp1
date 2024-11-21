@@ -1,0 +1,10 @@
+﻿@model RinconGuatemaltecoApp.Models.Cliente
+
+<h1>Eliminar Cliente</h1>
+
+<p>¿Estás seguro que deseas eliminar al cliente "@Model.Nombre"?</p>
+
+<form asp-action="DeleteConfirmed">
+    <input type="hidden" asp-for="ClienteID" />
+    <button type="submit">Eliminar</button>
+</form>

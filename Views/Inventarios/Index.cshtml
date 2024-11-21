@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RinconGuatemaltecoApp.Models.Producto>
+
+@{
+    ViewData["Title"] = "Inventario de Productos";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Inventario de Productos</h1>
+
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model)
+            {
+                <tr>
+                    <td>@producto.Nombre</td>
+                    <td>@producto.Categoria</td>
+                    <td>Q@producto.Precio.ToString("N2")</td>
+                    <td>@producto.Stock</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/Inventarios/Edit/@producto.ProductoID">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

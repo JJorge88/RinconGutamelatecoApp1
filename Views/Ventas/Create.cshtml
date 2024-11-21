@@ -1,0 +1,41 @@
+﻿@model RinconGuatemaltecoApp.Models.Venta
+
+<h1>Registrar Nueva Venta</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="ClienteID">Cliente</label>
+        <select asp-for="ClienteID" asp-items="@(ViewBag.Clientes ?? new List<SelectListItem>())" class="form-control" required>
+            <option value="" disabled selected>Seleccione un cliente</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="ProductoIDs">Producto</label>
+        <select name="ProductoIDs" id="ProductoIDs" class="form-control" required>
+            @if (ViewBag.Productos is List<SelectListItem>)
+            {
+                var productos = (List<SelectListItem>)ViewBag.Productos;
+                if (productos.Any())
+                {
+                    foreach (var producto in productos)
+                    {
+                        <option value="@producto.Value">@producto.Text</option>
+                    }
+                }
+                else
+                {
+                    <option value="" disabled>No hay productos disponibles</option>
+                }
+            }
+            else
+            {
+                <option value="" disabled>No hay productos disponibles</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Cantidades">Cantidad</label>
+        <input name="Cantidades" id="Cantidades" type="number" class="form-control" min="1" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+</form>

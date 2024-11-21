@@ -1,0 +1,63 @@
+﻿/* Fondo general */
+body {
+    background-color: #f0f8ff; /* Azul muy claro */
+    color: #333; /* Texto oscuro */
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    color: #007bff; /* Azul Bootstrap */
+}
+
+/* Navegación */
+.navbar {
+    background-color: #007bff; /* Azul intenso */
+    color: white;
+}
+
+.navbar-brand, .nav-link {
+    color: white;
+}
+
+    .nav-link:hover {
+        color: #f0f8ff;
+    }
+
+/* Botones */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+/* Tablas */
+table {
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+    table th {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+    }
+
+    table td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+/* Formularios */
+input, select, textarea {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
